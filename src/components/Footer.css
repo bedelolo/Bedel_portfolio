@@ -1,0 +1,32 @@
+.footer {
+    padding: 60px 0;
+    background-color: var(--color-bg-light);
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-text {
+    color: var(--color-text);
+    font-size: 14px;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-socials a {
+    color: var(--color-text);
+    transition: var(--transition);
+}
+
+.footer-socials a:hover {
+    color: var(--color-accent);
+    transform: translateY(-3px);
+}
