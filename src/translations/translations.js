@@ -60,7 +60,7 @@ export const translations = {
                 {
                     title: 'Data Analyst',
                     company: 'GrowUp-AI',
-                    period: 'Septembre 2025 – Aujourd\'hui',
+                    period: 'Septembre 2025 – Novembre 2025',
                     description: [
                         'Conception et animation de sessions de formation en Python pour l\'analyse de données.',
                         'Initiation aux bibliothèques Pandas, NumPy, Matplotlib et Seaborn.',
@@ -71,7 +71,7 @@ export const translations = {
                 {
                     title: 'Stagiaire Data Analyst',
                     company: 'Loterie Nationale du Bénin',
-                    period: '2024 – 2025',
+                    period: 'Juillet 2025 – Septembre 2025',
                     description: [
                         'Analyse des données opérationnelles.',
                         'Création de rapports interactifs Power BI.',
@@ -199,7 +199,7 @@ export const translations = {
                 {
                     title: 'Data Analyst',
                     company: 'GrowUp-AI',
-                    period: 'September 2025 – Present',
+                    period: 'September 2025 – November 2025',
                     description: [
                         'Designing and conducting Python training sessions for data analysis.',
                         'Introduction to Pandas, NumPy, Matplotlib and Seaborn libraries.',
@@ -210,7 +210,7 @@ export const translations = {
                 {
                     title: 'Data Analyst Intern',
                     company: 'Loterie Nationale du Bénin',
-                    period: '2024 – 2025',
+                    period: 'July 2025 – September 2025',
                     description: [
                         'Analyzing operational data.',
                         'Creating interactive Power BI reports.',
