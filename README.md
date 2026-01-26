@@ -133,4 +133,4 @@ Ce projet est sous licence MIT. Vous êtes libre de l'utiliser comme inspiration
 
 ⭐ **N'hésitez pas à mettre une étoile si ce projet vous a inspiré !**
 
-Développé avec ❤️ par Bedel OLOUKPONA
+Développé  par Bedel OLOUKPONA
