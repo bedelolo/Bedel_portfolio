@@ -13,7 +13,7 @@ const Projects = () => {
         {
             tech: ['Excel', 'Dashboard', 'Analyse'],
             github: 'https://github.com/bedeloloukpona/Tableau_de_bord',
-            image: null
+            image: '/Tableau de bord.png'
         },
         {
             tech: ['Power BI', 'DAX', 'Data Viz'],
