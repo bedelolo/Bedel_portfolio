@@ -12,27 +12,33 @@ const Projects = () => {
     const projectsData = [
         {
             tech: ['Excel', 'Dashboard', 'Analyse'],
-            github: 'https://github.com/bedeloloukpona/Tableau_de_bord'
+            github: 'https://github.com/bedeloloukpona/Tableau_de_bord',
+            image: null
         },
         {
             tech: ['Power BI', 'DAX', 'Data Viz'],
-            github: 'https://github.com/bedeloloukpona/Human_Analytics_dashboard'
+            github: 'https://github.com/bedeloloukpona/Human_Analytics_dashboard',
+            image: '/Dashboard.png'
         },
         {
             tech: ['Django', 'Python', 'Tailwind', 'SQLite'],
-            github: 'https://github.com/bedelolo/django-gestion-employe'
+            github: 'https://github.com/bedelolo/django-gestion-employe',
+            image: null
         },
         {
             tech: ['Python', 'Streamlit', 'Pandas', 'Data Analysis'],
-            github: 'https://github.com/bedelolo/Optimisation-services-publics'
+            github: 'https://github.com/bedelolo/Optimisation-services-publics',
+            image: null
         },
         {
             tech: ['Laravel', 'PHP', 'MySQL', 'Blade'],
-            github: 'https://github.com/bedelolo/essai2-laravel'
+            github: 'https://github.com/bedelolo/essai2-laravel',
+            image: null
         },
         {
             tech: ['Rust', 'Python', 'LLM', 'Actix-web'],
-            github: 'https://github.com/remiboivin021/llm-consensus-system'
+            github: 'https://github.com/remiboivin021/llm-consensus-system',
+            image: null
         }
     ];
 
@@ -58,6 +64,11 @@ const Projects = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                         >
+                            {projectsData[index].image && (
+                                <div className="project-image">
+                                    <img src={projectsData[index].image} alt={project.title} />
+                                </div>
+                            )}
                             <div className="project-header">
                                 <Folder size={40} className="folder-icon" />
                                 <div className="project-links">
