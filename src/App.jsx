@@ -4,7 +4,6 @@ import Hero from './sections/Hero';
 import About from './sections/About';
 import Skills from './sections/Skills';
 import Experience from './sections/Experience';
-import Education from './sections/Education';
 import Projects from './sections/Projects';
 import Contact from './sections/Contact';
 import Footer from './components/Footer';
@@ -14,14 +13,13 @@ import { LanguageProvider } from './context/LanguageContext';
 function App() {
   return (
     <LanguageProvider>
-      <div className="App">
+      <div className="App dark bg-background min-h-screen">
         <Navbar />
-        <main>
+        <main className="relative pt-20">
           <Hero />
           <About />
           <Skills />
           <Experience />
-          <Education />
           <Projects />
           <Contact />
         </main>

@@ -1,95 +1,109 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Github, Folder } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../translations/translations';
-import './Projects.css';
 
 const Projects = () => {
-    const { language } = useLanguage();
-    const t = translations[language];
+  const { language } = useLanguage();
+  const t = translations[language];
 
-    const projectsData = [
-        {
-            tech: ['Excel', 'Dashboard', 'Analyse'],
-            github: 'https://github.com/bedeloloukpona/Tableau_de_bord',
-            image: '/Tableau de bord.png'
-        },
-        {
-            tech: ['Power BI', 'DAX', 'Data Viz'],
-            github: 'https://github.com/bedeloloukpona/Human_Analytics_dashboard',
-            image: '/Dashboard.png'
-        },
-        {
-            tech: ['Django', 'Python', 'Tailwind', 'SQLite'],
-            github: 'https://github.com/bedelolo/django-gestion-employe',
-            image: null
-        },
-        {
-            tech: ['Python', 'Streamlit', 'Pandas', 'Data Analysis'],
-            github: 'https://github.com/bedelolo/Optimisation-services-publics',
-            image: null
-        },
-        {
-            tech: ['Laravel', 'PHP', 'MySQL', 'Blade'],
-            github: 'https://github.com/bedelolo/essai2-laravel',
-            image: null
-        },
-        {
-            tech: ['Rust', 'Python', 'LLM', 'Actix-web'],
-            github: 'https://github.com/remiboivin021/llm-consensus-system',
-            image: null
-        }
-    ];
+  // Map of project images from the public folder
+  const images = [
+    "/Tableau de bord.png",
+    "/Dashboard.png",
+    "/Capture d’écran 2026-07-10 192417.png",
+    "/nukponto.png",
+    "/vorm.png",
+    "/portfolio.png",
+    null,
+    null,
+    null
+  ];
 
-    return (
-        <section id="projects" className="projects section">
-            <div className="container">
-                <motion.h2
-                    className="section-title"
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
-                >
-                    {t.projects.title}
-                </motion.h2>
-                <div className="projects-grid">
-                    {t.projects.items.map((project, index) => (
-                        <motion.div
-                            key={index}
-                            className="project-card"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                        >
-                            {projectsData[index].image && (
-                                <div className="project-image">
-                                    <img src={projectsData[index].image} alt={project.title} />
-                                </div>
-                            )}
-                            <div className="project-header">
-                                <Folder size={40} className="folder-icon" />
-                                <div className="project-links">
-                                    <a href={projectsData[index].github} target="_blank" rel="noopener noreferrer">
-                                        <Github size={20} />
-                                    </a>
-                                </div>
-                            </div>
-                            <h3 className="project-title">{project.title}</h3>
-                            <p className="project-desc">{project.desc}</p>
-                            <ul className="project-tech-list">
-                                {projectsData[index].tech.map((tech, i) => (
-                                    <li key={i}>{tech}</li>
-                                ))}
-                            </ul>
-                        </motion.div>
-                    ))}
+  return (
+    <section className="py-xxl" id="projects">
+      <div className="container-max mx-auto px-8 md:px-lg">
+        <div className="flex flex-col md:flex-row justify-between items-end gap-lg mb-xxl">
+          <div className="max-w-2xl">
+            <h2 className="font-h2 text-h2 text-on-surface mb-md">
+              {t.projects.title}
+            </h2>
+            <p className="font-body-lg text-body-lg text-outline">
+              {t.projects.subtitle}
+            </p>
+          </div>
+          <a href="https://github.com/bedelolo" target="_blank" rel="noopener noreferrer" className="font-mono-label text-primary flex items-center gap-sm group">
+            {t.projects.viewAllRepos} <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+          </a>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+          {t.projects.items.map((proj, index) => {
+            const isDataProj = index === 0 || index === 1 || index === 2; // Basic heuristic based on titles in translation
+            const imgSrc = images[index % images.length];
+
+            return (
+              <div key={index} className="group glass-card rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-500">
+                {imgSrc && (
+                  <div className="h-48 overflow-hidden relative">
+                    <img 
+                      alt={proj.title} 
+                      className="w-full h-full object-cover group-hover:scale-110 transition-all duration-700 brightness-75" 
+                      src={imgSrc}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-surface-dim to-transparent opacity-60"></div>
+                  </div>
+                )}
+                
+                <div className="p-lg space-y-md">
+                  <div className="flex gap-sm">
+                    {proj.tech ? (
+                      proj.tech.map((tag, i) => (
+                        <span key={i} className={`text-[10px] font-mono-label px-sm py-xs border rounded ${isDataProj ? 'bg-primary/10 text-primary border-primary/20' : 'bg-tertiary/10 text-tertiary border-tertiary/20'}`}>
+                          {tag}
+                        </span>
+                      ))
+                    ) : (
+                      isDataProj ? (
+                        <>
+                          <span className="text-[10px] font-mono-label px-sm py-xs bg-primary/10 text-primary border border-primary/20 rounded">{t.projects.tags.powerBiExcel}</span>
+                          <span className="text-[10px] font-mono-label px-sm py-xs bg-primary/10 text-primary border border-primary/20 rounded">{t.projects.tags.python}</span>
+                        </>
+                      ) : (
+                        <>
+                          <span className="text-[10px] font-mono-label px-sm py-xs bg-tertiary/10 text-tertiary border border-tertiary/20 rounded">{t.projects.tags.djangoLaravel}</span>
+                          <span className="text-[10px] font-mono-label px-sm py-xs bg-tertiary/10 text-tertiary border border-tertiary/20 rounded">{t.projects.tags.js}</span>
+                        </>
+                      )
+                    )}
+                  </div>
+                  
+                  <h3 className="font-h3 text-[20px] text-on-surface">{proj.title}</h3>
+                  <p className="text-caption text-outline line-clamp-3">
+                    {proj.desc}
+                  </p>
+                  
+                  <div className="flex items-center gap-6 mt-4">
+                    {proj.github && (
+                      <a className="flex items-center gap-xs text-primary font-mono-label group/link" href={proj.github} target="_blank" rel="noopener noreferrer">
+                        <img alt="GitHub" className="w-5 h-5 invert opacity-70 group-hover/link:opacity-100 transition-opacity" src="/ghithub.png" />
+                        {t.projects.github} <span className="material-symbols-outlined text-[18px] group-hover/link:translate-x-1 transition-transform">open_in_new</span>
+                      </a>
+                    )}
+                    {proj.live && (
+                      <a className="flex items-center gap-xs text-tertiary font-mono-label group/link" href={proj.live} target="_blank" rel="noopener noreferrer">
+                        <span className="material-symbols-outlined text-[20px] opacity-70 group-hover/link:opacity-100 transition-opacity">visibility</span>
+                        {t.projects.live} <span className="material-symbols-outlined text-[18px] group-hover/link:translate-x-1 transition-transform">open_in_new</span>
+                      </a>
+                    )}
+                  </div>
                 </div>
-            </div>
-        </section>
-    );
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Projects;
