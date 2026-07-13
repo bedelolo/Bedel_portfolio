@@ -1,15 +1,17 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../translations/translations';
+import useScrollAnimation from '../hooks/useScrollAnimation';
 
 const Skills = () => {
   const { language } = useLanguage();
   const t = translations[language];
+  const [ref, isVisible] = useScrollAnimation({ threshold: 0.1 });
 
   return (
-    <section className="py-xxl" id="skills">
+    <section className="py-xxl" id="skills" ref={ref}>
       <div className="container-max mx-auto px-8 md:px-lg">
-        <div className="mb-xxl text-center max-w-2xl mx-auto">
+        <div className={`mb-xxl text-center max-w-2xl mx-auto animate-on-scroll ${isVisible ? 'visible' : ''}`}>
           <h2 className="font-h2 text-h2 text-on-surface mb-md">
             {t.skills.title}
           </h2>
@@ -20,7 +22,7 @@ const Skills = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-md auto-rows-[160px]">
           {/* Data Skills */}
-          <div className="md:col-span-8 md:row-span-2 glass-card rounded-2xl p-lg flex flex-col justify-between group overflow-hidden relative">
+          <div className={`md:col-span-8 md:row-span-2 glass-card rounded-2xl p-lg flex flex-col justify-between group overflow-hidden relative animate-fade-left delay-100 ${isVisible ? 'visible' : ''}`}>
             <div className="absolute -right-20 -bottom-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-all"></div>
             <div>
               <div className="flex items-center gap-md mb-md">
@@ -29,8 +31,8 @@ const Skills = () => {
               </div>
               <div className="flex flex-wrap gap-sm">
                 <span className="px-md py-sm bg-surface-container-highest border border-outline-variant rounded-full text-primary font-mono-label">Python (Pandas/NumPy)</span>
-                <span className="px-md py-sm bg-surface-container-highest border border-outline-variant rounded-full text-primary font-mono-label">SQL & NoSQL</span>
-                <span className="px-md py-sm bg-surface-container-highest border border-outline-variant rounded-full text-primary font-mono-label">Power BI & Tableau</span>
+                <span className="px-md py-sm bg-surface-container-highest border border-outline-variant rounded-full text-primary font-mono-label">SQL &amp; NoSQL</span>
+                <span className="px-md py-sm bg-surface-container-highest border border-outline-variant rounded-full text-primary font-mono-label">Power BI &amp; Tableau</span>
                 <span className="px-md py-sm bg-surface-container-highest border border-outline-variant rounded-full text-primary font-mono-label">Excel (VBA/PowerPivot)</span>
                 <span className="px-md py-sm bg-surface-container-highest border border-outline-variant rounded-full text-primary font-mono-label">{t.skills.statisticalModeling}</span>
               </div>
@@ -41,7 +43,7 @@ const Skills = () => {
           </div>
 
           {/* Web Skills */}
-          <div className="md:col-span-4 md:row-span-3 glass-card rounded-2xl p-lg flex flex-col group relative overflow-hidden">
+          <div className={`md:col-span-4 md:row-span-3 glass-card rounded-2xl p-lg flex flex-col group relative overflow-hidden animate-fade-right delay-200 ${isVisible ? 'visible' : ''}`}>
             <div className="absolute -left-10 -top-10 w-48 h-48 bg-tertiary/5 rounded-full blur-3xl group-hover:bg-tertiary/10 transition-all"></div>
             <div className="flex items-center gap-md mb-md">
               <span className="material-symbols-outlined text-tertiary p-sm bg-tertiary/10 rounded-lg">dynamic_form</span>
@@ -54,7 +56,7 @@ const Skills = () => {
                   <span>95%</span>
                 </div>
                 <div className="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden">
-                  <div className="h-full bg-tertiary w-[95%]"></div>
+                  <div className={`h-full bg-tertiary rounded-full transition-all duration-1000 ease-out ${isVisible ? 'w-[95%]' : 'w-0'}`}></div>
                 </div>
               </div>
               <div className="space-y-sm">
@@ -63,7 +65,7 @@ const Skills = () => {
                   <span>90%</span>
                 </div>
                 <div className="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden">
-                  <div className="h-full bg-tertiary w-[90%]"></div>
+                  <div className={`h-full bg-tertiary rounded-full transition-all duration-1000 ease-out delay-200 ${isVisible ? 'w-[90%]' : 'w-0'}`}></div>
                 </div>
               </div>
               <div className="space-y-sm">
@@ -72,7 +74,7 @@ const Skills = () => {
                   <span>85%</span>
                 </div>
                 <div className="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden">
-                  <div className="h-full bg-tertiary w-[85%]"></div>
+                  <div className={`h-full bg-tertiary rounded-full transition-all duration-1000 ease-out delay-400 ${isVisible ? 'w-[85%]' : 'w-0'}`}></div>
                 </div>
               </div>
             </div>
@@ -84,7 +86,7 @@ const Skills = () => {
           </div>
 
           {/* Tools Skills */}
-          <div className="md:col-span-8 md:row-span-1 glass-card rounded-2xl p-lg flex items-center justify-between gap-xl">
+          <div className={`md:col-span-8 md:row-span-1 glass-card rounded-2xl p-lg flex items-center justify-between gap-xl animate-on-scroll delay-300 ${isVisible ? 'visible' : ''}`}>
             <div className="flex items-center gap-md">
               <span className="material-symbols-outlined text-primary p-sm bg-primary/10 rounded-lg">construction</span>
               <h3 className="font-h3 text-[24px]">{t.skills.workflowTools}</h3>
