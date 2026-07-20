@@ -67,12 +67,12 @@ const Contact = () => {
                 </div>
                 <div>
                   <div className="text-caption font-mono-label text-outline uppercase">{t.contact.whatsapp}</div>
-                  <div className="text-body-lg text-on-surface">+229 01 54 65 56 76</div>
+                  <div className="text-body-lg text-on-surface">+229 54 65 56 76</div>
                 </div>
               </div>
             </div>
             
-            <div className="flex gap-md pt-lg">
+            <div className="flex flex-wrap gap-md pt-lg">
               <a className="p-md glass-card rounded-full hover:bg-primary/20 transition-all" href="https://github.com/bedelolo" target="_blank" rel="noopener noreferrer">
                 <img alt="GitHub" className="w-6 h-6 invert" src="/ghithub.png"/>
               </a>

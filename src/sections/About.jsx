@@ -33,7 +33,7 @@ const About = () => {
               {t.about.p2}
             </p>
             
-            <div className="grid grid-cols-2 gap-md mt-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-md mt-8">
               <div className={`glass-card p-lg rounded-xl hover:border-primary/50 transition-colors animate-scale-in delay-200 ${isVisible ? 'visible' : ''}`}>
                 <span className="material-symbols-outlined text-primary mb-sm">code</span>
                 <h4 className="font-h3 text-[20px] text-on-surface mb-xs">{t.about.stats.webDev}</h4>

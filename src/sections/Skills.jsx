@@ -86,12 +86,12 @@ const Skills = () => {
           </div>
 
           {/* Tools Skills */}
-          <div className={`md:col-span-8 md:row-span-1 glass-card rounded-2xl p-lg flex items-center justify-between gap-xl animate-on-scroll delay-300 ${isVisible ? 'visible' : ''}`}>
+          <div className={`md:col-span-8 md:row-span-1 glass-card rounded-2xl p-lg flex flex-col md:flex-row md:items-center justify-between gap-md md:gap-xl animate-on-scroll delay-300 ${isVisible ? 'visible' : ''}`}>
             <div className="flex items-center gap-md">
               <span className="material-symbols-outlined text-primary p-sm bg-primary/10 rounded-lg">construction</span>
               <h3 className="font-h3 text-[24px]">{t.skills.workflowTools}</h3>
             </div>
-            <div className="flex gap-md">
+            <div className="flex flex-wrap gap-md">
               <div className="flex flex-col items-center">
                 <span className="material-symbols-outlined text-outline">hub</span>
                 <span className="text-caption font-mono-label mt-xs uppercase">Git</span>

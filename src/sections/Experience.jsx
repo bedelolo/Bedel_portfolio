@@ -15,7 +15,7 @@ const Experience = () => {
           
           {/* Experience */}
           <div>
-            <h2 className={`font-h2 text-h2 text-on-surface mb-xxl flex items-center gap-md animate-on-scroll ${isVisible ? 'visible' : ''}`}>
+            <h2 className={`font-h2 text-h2 text-on-surface mb-xxl flex flex-wrap items-center gap-md animate-on-scroll ${isVisible ? 'visible' : ''}`}>
               {t.experience.title} <span className="text-primary">{t.experience.journey}</span>
             </h2>
             <div className="relative border-l border-white/10 pl-lg space-y-xxl">
@@ -40,7 +40,7 @@ const Experience = () => {
 
           {/* Education */}
           <div id="education">
-            <h2 className={`font-h2 text-h2 text-on-surface mb-xxl flex items-center gap-md animate-on-scroll delay-100 ${isVisible ? 'visible' : ''}`}>
+            <h2 className={`font-h2 text-h2 text-on-surface mb-xxl flex flex-wrap items-center gap-md animate-on-scroll delay-100 ${isVisible ? 'visible' : ''}`}>
               {t.education.title}
             </h2>
             <div className="relative border-l border-white/10 pl-lg space-y-xxl">

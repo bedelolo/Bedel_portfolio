@@ -22,7 +22,7 @@ const Projects = () => {
   return (
     <section className="py-xxl" id="projects">
       <div className="container-max mx-auto px-8 md:px-lg">
-        <div className="flex flex-col md:flex-row justify-between items-end gap-lg mb-xxl">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-lg mb-xxl">
           <div className="max-w-2xl">
             <h2 className="font-h2 text-h2 text-on-surface mb-md">
               {t.projects.title}
@@ -55,7 +55,7 @@ const Projects = () => {
                 )}
                 
                 <div className="p-lg space-y-md">
-                  <div className="flex gap-sm">
+                  <div className="flex flex-wrap gap-sm">
                     {proj.tech ? (
                       proj.tech.map((tag, i) => (
                         <span key={i} className={`text-[10px] font-mono-label px-sm py-xs border rounded ${isDataProj ? 'bg-primary/10 text-primary border-primary/20' : 'bg-tertiary/10 text-tertiary border-tertiary/20'}`}>
@@ -82,7 +82,7 @@ const Projects = () => {
                     {proj.desc}
                   </p>
                   
-                  <div className="flex items-center gap-6 mt-4">
+                  <div className="flex flex-wrap items-center gap-4 mt-4">
                     {proj.github && (
                       <a className="flex items-center gap-xs text-primary font-mono-label group/link" href={proj.github} target="_blank" rel="noopener noreferrer">
                         <img alt="GitHub" className="w-5 h-5 invert opacity-70 group-hover/link:opacity-100 transition-opacity" src="/ghithub.png" />

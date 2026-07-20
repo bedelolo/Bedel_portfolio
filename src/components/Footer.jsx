@@ -13,7 +13,7 @@ const Footer = () => {
           BEDEL.
         </div>
         
-        <div className="flex gap-8">
+        <div className="flex flex-wrap justify-center gap-4 md:gap-8">
           <a href="https://github.com/bedelolo" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 font-['Plus_Jakarta_Sans'] text-sm uppercase tracking-widest text-slate-500 hover:text-cyan-300 transition-colors group">
             <img alt="GitHub" className="w-5 h-5 invert opacity-70 group-hover:opacity-100 transition-all" src="/ghithub.png"/>
             GitHub
@@ -24,7 +24,7 @@ const Footer = () => {
           </a>
         </div>
         
-        <div className="font-['Plus_Jakarta_Sans'] text-sm uppercase tracking-widest text-slate-500">
+        <div className="font-['Plus_Jakarta_Sans'] text-sm uppercase tracking-widest text-slate-500 text-center md:text-left">
           © {new Date().getFullYear()} BEDEL. {t.footer.copyright}.
         </div>
       </div>
