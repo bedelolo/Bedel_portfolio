@@ -3,11 +3,12 @@
 @tailwind utilities;
 
 @layer base {
-  body {
+  html, body {
     background-color: #0b1326;
     color: #dae2fd;
     -webkit-font-smoothing: antialiased;
     font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
   }
 
   /* Hide default cursor on desktop */

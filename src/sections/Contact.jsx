@@ -62,9 +62,9 @@ const Contact = () => {
                 <div className="p-sm bg-primary/10 rounded-lg">
                   <span className="material-symbols-outlined text-primary">mail</span>
                 </div>
-                <div className="flex-1">
+                <div className="flex-1 min-w-0">
                   <div className="text-caption font-mono-label text-outline uppercase">{t.contact.email}</div>
-                  <div className="text-body-lg text-on-surface">boloukpona@gmail.com</div>
+                  <div className="text-body-lg text-on-surface break-all">boloukpona@gmail.com</div>
                 </div>
                 <button 
                   onClick={handleCopyEmail}
