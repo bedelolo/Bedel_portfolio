@@ -6,6 +6,13 @@ const Contact = () => {
   const { language } = useLanguage();
   const t = translations[language];
   const [status, setStatus] = useState("");
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText("boloukpona@gmail.com");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -55,10 +62,17 @@ const Contact = () => {
                 <div className="p-sm bg-primary/10 rounded-lg">
                   <span className="material-symbols-outlined text-primary">mail</span>
                 </div>
-                <div>
+                <div className="flex-1">
                   <div className="text-caption font-mono-label text-outline uppercase">{t.contact.email}</div>
                   <div className="text-body-lg text-on-surface">boloukpona@gmail.com</div>
                 </div>
+                <button 
+                  onClick={handleCopyEmail}
+                  className="p-xs ml-auto text-primary hover:bg-primary/10 rounded-md transition-all flex items-center justify-center"
+                  title="Copier l'adresse email"
+                >
+                  <span className="material-symbols-outlined text-[20px]">{copied ? 'check' : 'content_copy'}</span>
+                </button>
               </div>
               
               <div className="flex items-center gap-md">
@@ -79,7 +93,7 @@ const Contact = () => {
               <a className="p-md glass-card rounded-full hover:bg-primary/20 transition-all" href="https://www.linkedin.com/in/bedel-oloukpona-8190722a0/" target="_blank" rel="noopener noreferrer">
                 <img alt="LinkedIn" className="w-6 h-6" src="/linkdin.png"/>
               </a>
-              <a className="px-6 py-2 glass-card rounded-full hover:bg-primary hover:text-on-primary font-bold transition-all flex items-center justify-center border border-primary text-primary" href="/CV_Bedel_OLOUKPONA.pdf" target="_blank" rel="noopener noreferrer">
+              <a data-umami-event="download-cv" className="px-6 py-2 glass-card rounded-full hover:bg-primary hover:text-on-primary font-bold transition-all flex items-center justify-center border border-primary text-primary" href="/CV_Bedel_OLOUKPONA.pdf" target="_blank" rel="noopener noreferrer">
                 {t.contact.downloadCV}
               </a>
             </div>

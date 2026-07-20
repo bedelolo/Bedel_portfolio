@@ -7,9 +7,6 @@ const CustomCursor = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Only show on non-touch devices
-    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    if (isTouchDevice) return;
 
     const handleMouseMove = (e) => {
       setPosition({ x: e.clientX, y: e.clientY });
@@ -68,7 +65,7 @@ const CustomCursor = () => {
     <>
       {/* Main dot */}
       <div
-        className="fixed top-0 left-0 pointer-events-none z-[9998] mix-blend-difference"
+        className="fixed top-0 left-0 pointer-events-none z-[9998]"
         style={{
           transform: `translate(${position.x - 4}px, ${position.y - 4}px)`,
           transition: 'transform 0.05s linear',
