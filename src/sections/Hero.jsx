@@ -48,6 +48,9 @@ const Hero = () => {
             <a href="#projects" className="bg-primary text-on-primary px-lg py-md rounded-lg font-bold hover:glow-cyan transition-all flex items-center gap-sm">
               {t.hero.viewProjects} <span className="material-symbols-outlined">arrow_forward</span>
             </a>
+            <a href="/CV_Bedel_OLOUKPONA.pdf" target="_blank" rel="noopener noreferrer" className="border border-tertiary text-tertiary px-lg py-md rounded-lg font-bold hover:bg-tertiary/10 transition-all flex items-center justify-center gap-sm">
+              <span className="material-symbols-outlined">download</span> {t.contact.downloadCV}
+            </a>
             <a href="#contact" className="border border-primary text-primary px-lg py-md rounded-lg font-bold hover:bg-primary/5 transition-all flex items-center justify-center">
               {t.hero.contact}
             </a>

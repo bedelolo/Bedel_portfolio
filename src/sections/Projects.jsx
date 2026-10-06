@@ -6,18 +6,7 @@ const Projects = () => {
   const { language } = useLanguage();
   const t = translations[language];
 
-  // Map of project images from the public folder
-  const images = [
-    "/Tableau de bord.png",
-    "/Dashboard.png",
-    "/Capture d’écran 2026-07-10 192417.png",
-    "/nukponto.png",
-    "/vorm.png",
-    "/portfolio.png",
-    null,
-    null,
-    null
-  ];
+
 
   return (
     <section className="py-xxl" id="projects">
@@ -38,13 +27,14 @@ const Projects = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
           {t.projects.items.map((proj, index) => {
-            const isDataProj = index === 0 || index === 1 || index === 2; // Basic heuristic based on titles in translation
-            const imgSrc = images[index % images.length];
+            const imgSrc = proj.image;
+            // determine if it's a data project to style tags differently
+            const isDataProj = proj.tech && proj.tech.some(tag => ['PYTHON', 'POWER BI', 'EXCEL', 'STREAMLIT'].includes(tag));
 
             return (
-              <div key={index} className="group glass-card rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-500">
+              <div key={index} className="group glass-card rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-500 flex flex-col h-full">
                 {imgSrc && (
-                  <div className="h-48 overflow-hidden relative">
+                  <div className="h-48 shrink-0 overflow-hidden relative">
                     <img 
                       alt={proj.title} 
                       className="w-full h-full object-cover group-hover:scale-110 transition-all duration-700 brightness-75" 
@@ -54,35 +44,34 @@ const Projects = () => {
                   </div>
                 )}
                 
-                <div className="p-lg space-y-md">
+                <div className="p-lg space-y-md flex-1 flex flex-col">
                   <div className="flex flex-wrap gap-sm">
-                    {proj.tech ? (
-                      proj.tech.map((tag, i) => (
-                        <span key={i} className={`text-[10px] font-mono-label px-sm py-xs border rounded ${isDataProj ? 'bg-primary/10 text-primary border-primary/20' : 'bg-tertiary/10 text-tertiary border-tertiary/20'}`}>
-                          {tag}
-                        </span>
-                      ))
-                    ) : (
-                      isDataProj ? (
-                        <>
-                          <span className="text-[10px] font-mono-label px-sm py-xs bg-primary/10 text-primary border border-primary/20 rounded">{t.projects.tags.powerBiExcel}</span>
-                          <span className="text-[10px] font-mono-label px-sm py-xs bg-primary/10 text-primary border border-primary/20 rounded">{t.projects.tags.python}</span>
-                        </>
-                      ) : (
-                        <>
-                          <span className="text-[10px] font-mono-label px-sm py-xs bg-tertiary/10 text-tertiary border border-tertiary/20 rounded">{t.projects.tags.djangoLaravel}</span>
-                          <span className="text-[10px] font-mono-label px-sm py-xs bg-tertiary/10 text-tertiary border border-tertiary/20 rounded">{t.projects.tags.js}</span>
-                        </>
-                      )
-                    )}
+                    {proj.tech && proj.tech.map((tag, i) => (
+                      <span key={i} className={`text-[10px] font-mono-label px-sm py-xs border rounded ${isDataProj ? 'bg-primary/10 text-primary border-primary/20' : 'bg-tertiary/10 text-tertiary border-tertiary/20'}`}>
+                        {tag}
+                      </span>
+                    ))}
                   </div>
                   
                   <h3 className="font-h3 text-[20px] text-on-surface">{proj.title}</h3>
-                  <p className="text-caption text-outline line-clamp-3">
-                    {proj.desc}
-                  </p>
+                  <div className="space-y-2">
+                    <p className="text-caption text-outline">
+                      {proj.desc}
+                    </p>
+                    
+                    {proj.achievements && (
+                      <div className="pt-2">
+                        <p className="text-caption font-bold text-on-surface mb-1">{t.projects.achievementsTitle}</p>
+                        <ul className="list-disc pl-4 text-caption text-outline space-y-1">
+                          {proj.achievements.map((ach, j) => (
+                            <li key={j}>{ach}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
                   
-                  <div className="flex flex-wrap items-center gap-4 mt-4">
+                  <div className="flex flex-wrap items-center gap-4 mt-auto pt-4">
                     {proj.github && (
                       <a className="flex items-center gap-xs text-primary font-mono-label group/link" href={proj.github} target="_blank" rel="noopener noreferrer">
                         <img alt="GitHub" className="w-5 h-5 invert opacity-70 group-hover/link:opacity-100 transition-opacity" src="/ghithub.png" />

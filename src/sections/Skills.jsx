@@ -29,17 +29,25 @@ const Skills = () => {
                 <span className="material-symbols-outlined text-primary p-sm bg-primary/10 rounded-lg">analytics</span>
                 <h3 className="font-h3 text-h3">{t.skills.dataScience}</h3>
               </div>
-              <div className="flex flex-wrap gap-sm">
-                <span className="px-md py-sm bg-surface-container-highest border border-outline-variant rounded-full text-primary font-mono-label">Python (Pandas/NumPy)</span>
-                <span className="px-md py-sm bg-surface-container-highest border border-outline-variant rounded-full text-primary font-mono-label">SQL &amp; NoSQL</span>
-                <span className="px-md py-sm bg-surface-container-highest border border-outline-variant rounded-full text-primary font-mono-label">Power BI &amp; Tableau</span>
-                <span className="px-md py-sm bg-surface-container-highest border border-outline-variant rounded-full text-primary font-mono-label">Excel (VBA/PowerPivot)</span>
-                <span className="px-md py-sm bg-surface-container-highest border border-outline-variant rounded-full text-primary font-mono-label">{t.skills.statisticalModeling}</span>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+                <div>
+                  <h4 className="text-on-surface font-bold text-[12px] mb-2 opacity-70 uppercase tracking-wider">{t.skills.categories.languagesDb}</h4>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-3 py-1 bg-surface-container-highest border border-outline-variant rounded-full text-primary font-mono-label text-[11px]">Python (Pandas, NumPy)</span>
+                    <span className="px-3 py-1 bg-surface-container-highest border border-outline-variant rounded-full text-primary font-mono-label text-[11px]">SQL & MySQL / PostgreSQL</span>
+                    <span className="px-3 py-1 bg-surface-container-highest border border-outline-variant rounded-full text-primary font-mono-label text-[11px]">{t.skills.statisticalModeling}</span>
+                  </div>
+                </div>
+                <div>
+                  <h4 className="text-on-surface font-bold text-[12px] mb-2 opacity-70 uppercase tracking-wider">{t.skills.categories.vizTools}</h4>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-3 py-1 bg-surface-container-highest border border-outline-variant rounded-full text-primary font-mono-label text-[11px]">Power BI & DAX</span>
+                    <span className="px-3 py-1 bg-surface-container-highest border border-outline-variant rounded-full text-primary font-mono-label text-[11px]">Excel (TCD, PowerPivot)</span>
+                    <span className="px-3 py-1 bg-surface-container-highest border border-outline-variant rounded-full text-primary font-mono-label text-[11px]">Tableau</span>
+                  </div>
+                </div>
               </div>
             </div>
-            <p className="text-outline font-body-md mt-md">
-              {t.skills.items.powerbi} • {t.skills.items.python} • {t.skills.items.sql}
-            </p>
           </div>
 
           {/* Web Skills */}
@@ -49,39 +57,29 @@ const Skills = () => {
               <span className="material-symbols-outlined text-tertiary p-sm bg-tertiary/10 rounded-lg">dynamic_form</span>
               <h3 className="font-h3 text-h3">{t.skills.webEcosystem}</h3>
             </div>
-            <div className="space-y-md flex-grow z-10">
-              <div className="space-y-sm">
-                <div className="flex justify-between text-caption font-mono-label">
-                  <span>{t.skills.backend}</span>
-                  <span>95%</span>
-                </div>
-                <div className="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden">
-                  <div className={`h-full bg-tertiary rounded-full transition-all duration-1000 ease-out ${isVisible ? 'w-[95%]' : 'w-0'}`}></div>
+            <div className="space-y-4 flex-grow z-10 mt-2">
+              <div className="space-y-2">
+                <h4 className="text-tertiary font-bold text-[12px] opacity-90 uppercase tracking-wider">{t.skills.categories.backend}</h4>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-2 py-1 bg-tertiary/10 text-tertiary border border-tertiary/20 rounded font-mono-label text-[11px]">Django (Python)</span>
+                  <span className="px-2 py-1 bg-tertiary/10 text-tertiary border border-tertiary/20 rounded font-mono-label text-[11px]">Laravel (PHP)</span>
                 </div>
               </div>
-              <div className="space-y-sm">
-                <div className="flex justify-between text-caption font-mono-label">
-                  <span>{t.skills.frontend}</span>
-                  <span>90%</span>
-                </div>
-                <div className="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden">
-                  <div className={`h-full bg-tertiary rounded-full transition-all duration-1000 ease-out delay-200 ${isVisible ? 'w-[90%]' : 'w-0'}`}></div>
-                </div>
-              </div>
-              <div className="space-y-sm">
-                <div className="flex justify-between text-caption font-mono-label">
-                  <span>{t.skills.apiDesign}</span>
-                  <span>85%</span>
-                </div>
-                <div className="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden">
-                  <div className={`h-full bg-tertiary rounded-full transition-all duration-1000 ease-out delay-400 ${isVisible ? 'w-[85%]' : 'w-0'}`}></div>
+              <div className="space-y-2">
+                <h4 className="text-tertiary font-bold text-[12px] opacity-90 uppercase tracking-wider">{t.skills.categories.frontend}</h4>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-2 py-1 bg-tertiary/10 text-tertiary border border-tertiary/20 rounded font-mono-label text-[11px]">React.js</span>
+                  <span className="px-2 py-1 bg-tertiary/10 text-tertiary border border-tertiary/20 rounded font-mono-label text-[11px]">Tailwind CSS</span>
+                  <span className="px-2 py-1 bg-tertiary/10 text-tertiary border border-tertiary/20 rounded font-mono-label text-[11px]">JavaScript (ES6+)</span>
                 </div>
               </div>
-            </div>
-            <div className="mt-xl flex flex-wrap gap-xs z-10">
-              <span className="p-sm glass-card rounded-lg material-symbols-outlined">html</span>
-              <span className="p-sm glass-card rounded-lg material-symbols-outlined">css</span>
-              <span className="p-sm glass-card rounded-lg material-symbols-outlined">javascript</span>
+              <div className="space-y-2">
+                <h4 className="text-tertiary font-bold text-[12px] opacity-90 uppercase tracking-wider">{t.skills.categories.architecture}</h4>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-2 py-1 bg-tertiary/10 text-tertiary border border-tertiary/20 rounded font-mono-label text-[11px]">API REST</span>
+                  <span className="px-2 py-1 bg-tertiary/10 text-tertiary border border-tertiary/20 rounded font-mono-label text-[11px]">MVC Pattern</span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -91,18 +89,26 @@ const Skills = () => {
               <span className="material-symbols-outlined text-primary p-sm bg-primary/10 rounded-lg">construction</span>
               <h3 className="font-h3 text-[24px]">{t.skills.workflowTools}</h3>
             </div>
-            <div className="flex flex-wrap gap-md">
-              <div className="flex flex-col items-center">
-                <span className="material-symbols-outlined text-outline">hub</span>
-                <span className="text-caption font-mono-label mt-xs uppercase">Git</span>
+            <div className="flex flex-wrap gap-6 mt-4 md:mt-0">
+              <div className="flex flex-col items-center group/tool">
+                <span className="material-symbols-outlined text-outline group-hover/tool:text-primary transition-colors text-3xl">hub</span>
+                <span className="text-caption font-mono-label mt-xs uppercase">Git/GitHub</span>
               </div>
-              <div className="flex flex-col items-center">
-                <span className="material-symbols-outlined text-outline">terminal</span>
+              <div className="flex flex-col items-center group/tool">
+                <span className="material-symbols-outlined text-outline group-hover/tool:text-primary transition-colors text-3xl">terminal</span>
                 <span className="text-caption font-mono-label mt-xs uppercase">Docker</span>
               </div>
-              <div className="flex flex-col items-center">
-                <span className="material-symbols-outlined text-outline">book</span>
+              <div className="flex flex-col items-center group/tool">
+                <span className="material-symbols-outlined text-outline group-hover/tool:text-primary transition-colors text-3xl">design_services</span>
+                <span className="text-caption font-mono-label mt-xs uppercase">Figma</span>
+              </div>
+              <div className="flex flex-col items-center group/tool">
+                <span className="material-symbols-outlined text-outline group-hover/tool:text-primary transition-colors text-3xl">book</span>
                 <span className="text-caption font-mono-label mt-xs uppercase">Jupyter</span>
+              </div>
+              <div className="flex flex-col items-center group/tool">
+                <span className="material-symbols-outlined text-outline group-hover/tool:text-primary transition-colors text-3xl">api</span>
+                <span className="text-caption font-mono-label mt-xs uppercase">Postman</span>
               </div>
             </div>
           </div>

@@ -33,6 +33,12 @@ const About = () => {
               {t.about.p2}
             </p>
             
+            <div className={`mt-6 mb-2 animate-on-scroll delay-300 ${isVisible ? 'visible' : ''}`}>
+              <a href="/CV_Bedel_OLOUKPONA.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-sm bg-tertiary/10 text-tertiary border border-tertiary/20 px-lg py-md rounded-lg font-bold hover:bg-tertiary hover:text-slate-900 transition-all">
+                <span className="material-symbols-outlined">download</span> {t.contact.downloadCV}
+              </a>
+            </div>
+            
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-md mt-8">
               <div className={`glass-card p-lg rounded-xl hover:border-primary/50 transition-colors animate-scale-in delay-200 ${isVisible ? 'visible' : ''}`}>
                 <span className="material-symbols-outlined text-primary mb-sm">code</span>

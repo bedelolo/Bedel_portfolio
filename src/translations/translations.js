@@ -45,6 +45,13 @@ export const translations = {
             frontend: 'FRONTEND (JS/TAILWIND)',
             apiDesign: 'API DESIGN (REST)',
             statisticalModeling: 'Modélisation Statistique',
+            categories: {
+                languagesDb: 'Langages & BDD',
+                vizTools: 'Visualisation & Outils',
+                backend: 'Backend',
+                frontend: 'Frontend',
+                architecture: 'Architecture'
+            },
             items: {
                 excel: 'TCD, fonctions avancées, tableaux dynamiques',
                 sql: 'Requêtes complexes, jointures, bases relationnelles',
@@ -64,11 +71,13 @@ export const translations = {
             journey: 'Parcours',
             items: [
                 {
-                    title: 'Co-fondateur',
-                    company: 'Vorm',
+                    title: 'Co-fondateur & Développeur Full-Stack',
+                    company: 'Vorm AI',
                     period: 'Mai 2026 – Aujourd\'hui',
                     description: [
-                        'Co-fondation de Vorm, plateforme de gouvernance pour l\'IA.'
+                        'Conception de l\'UI/UX sur Figma et développement du frontend en React pour garantir une expérience utilisateur fluide.',
+                        'Architecture et implémentation du backend avec Django, assurant la robustesse et la sécurité de la plateforme.',
+                        'Mise en place d\'une infrastructure scalable pour la gouvernance et la gestion des permissions des agents IA.'
                     ]
                 },
                 {
@@ -76,8 +85,9 @@ export const translations = {
                     company: '10 000 Codeurs',
                     period: 'Février 2025 – Aujourd\'hui',
                     description: [
-                        'Détenteur du passeport numérique de 10 000 codeurs.',
-                        'En charge de la stratégie data pour la conférence 10 000 Codeurs à Cotonou.'
+                        'Définition et pilotage de la stratégie data pour la conférence de Cotonou, augmentant l\'efficacité de l\'organisation.',
+                        'Analyse des indicateurs clés pour orienter les décisions stratégiques lors des événements majeurs.',
+                        'Détenteur du passeport numérique, validant les compétences techniques et le savoir-être.'
                     ]
                 },
                 {
@@ -85,21 +95,19 @@ export const translations = {
                     company: 'AYELTECH',
                     period: 'Novembre 2025 – Février 2026',
                     description: [
-                        'Création de tableaux de bord interactifs avec Power BI pour le suivi des KPIs.',
-                        'Développement de sites web et applications web avec Laravel et Django.',
-                        'Conception de solutions full-stack alliant développement web et analyse de données.',
-                        'Optimisation des processus métier grâce à l\'automatisation et la visualisation de données.'
+                        'Conception de tableaux de bord interactifs automatisés sous Power BI, réduisant significativement le temps de reporting.',
+                        'Développement full-stack de plateformes web (Laravel et Django) répondant aux besoins spécifiques des clients.',
+                        'Analyse approfondie de bases de données métiers pour extraire des insights directement exploitables par la direction.'
                     ]
                 },
                 {
-                    title: 'Data Analyst',
+                    title: 'Formateur Data Analyst',
                     company: 'GrowUp-AI',
                     period: 'Septembre 2025 – Novembre 2025',
                     description: [
-                        'Conception et animation de sessions de formation en Python pour l\'analyse de données.',
-                        'Initiation aux bibliothèques Pandas, NumPy, Matplotlib et Seaborn.',
-                        'Encadrement d\'apprenants sur des mini-projets pratiques.',
-                        'Création de supports pédagogiques clairs et accessibles.'
+                        'Création d\'un cursus de formation complet sur Python (Pandas, NumPy, Matplotlib, Seaborn) pour l\'analyse de données.',
+                        'Encadrement technique et accompagnement d\'une cohorte d\'apprenants sur des mini-projets pratiques concrets.',
+                        'Vulgarisation de concepts statistiques complexes pour accélérer la montée en compétences des participants.'
                     ]
                 },
                 {
@@ -107,9 +115,9 @@ export const translations = {
                     company: 'Loterie Nationale du Bénin',
                     period: 'Juillet 2025 – Septembre 2025',
                     description: [
-                        'Analyse des données opérationnelles.',
-                        'Création de rapports interactifs Power BI.',
-                        'Optimisation des tableaux de bord Excel pour la prise de décision.'
+                        'Analyse de jeux de données opérationnels volumineux pour identifier les tendances de consommation.',
+                        'Élaboration de rapports interactifs Power BI et optimisation des tableaux de bord Excel existants.',
+                        'Automatisation de processus de collecte de données, améliorant la fiabilité des KPI quotidiens.'
                     ]
                 }
             ]
@@ -144,6 +152,7 @@ export const translations = {
             viewAllRepos: "VOIR TOUS LES DÉPÔTS",
             github: "GITHUB",
             live: "VUE",
+            achievementsTitle: "Ce que j'ai réalisé :",
             tags: {
                 powerBiExcel: "POWER BI / EXCEL",
                 python: "PYTHON",
@@ -153,55 +162,122 @@ export const translations = {
             items: [
                 {
                     title: 'Étude des performances commerciales',
-                    desc: 'Tableau de bord Excel pour analyser les performances par région, produit et période. Outil utilisé pour la prise de décision en temps réel.',
-                    github: 'https://github.com/bedeloloukpona/Tableau_de_bord'
+                    desc: 'Outil d\'analyse des performances par région, produit et période.',
+                    achievements: [
+                        'Création d\'un tableau de bord dynamique sur Excel',
+                        'Analyse croisée des ventes par région et période',
+                        'Mise en évidence des produits phares',
+                        'Aide à la prise de décision en temps réel'
+                    ],
+                    github: 'https://github.com/bedeloloukpona/Tableau_de_bord',
+                    image: '/Tableau de bord.png',
+                    tech: ['POWER BI', 'EXCEL']
                 },
                 {
                     title: 'Dashboard RH – Visualisation',
-                    desc: 'Suivi des indicateurs clés (salaires, âge, satisfaction) et analyse du personnel par genre, département et rôle avec Power BI.',
-                    github: 'https://github.com/bedeloloukpona/Human_Analytics_dashboard'
+                    desc: 'Analyse des données RH afin d\'identifier les tendances liées aux salaires, à l\'âge, à la satisfaction, aux départements et aux fonctions.',
+                    achievements: [
+                        'Nettoyage et préparation des données',
+                        'Création des KPI RH',
+                        'Analyse par département et fonction',
+                        'Visualisation interactive',
+                        'Identification des principaux indicateurs de performance'
+                    ],
+                    github: 'https://github.com/bedeloloukpona/Human_Analytics_dashboard',
+                    image: '/Dashboard.png',
+                    tech: ['POWER BI', 'EXCEL', 'DAX']
                 },
                 {
                     title: 'Optimisation Services Publics',
-                    desc: 'Analyse Data-Driven de la performance des services administratifs. Dashboard interactif pour le pilotage stratégique.',
+                    desc: 'Dashboard interactif Data-Driven pour l\'évaluation et le pilotage stratégique des services administratifs.',
+                    achievements: [
+                        'Traitement des données de performance des services',
+                        'Développement d\'une application interactive avec Streamlit',
+                        'Visualisation des goulots d\'étranglement administratifs',
+                        'Fourniture d\'indicateurs de pilotage stratégique'
+                    ],
                     github: 'https://github.com/bedelolo/Optimisation-services-publics',
-                    live: 'https://bedelolo-optimisation-services-publics-dashboardapp-qju07e.streamlit.app/'
+                    live: 'https://bedelolo-optimisation-services-publics-dashboardapp-qju07e.streamlit.app/',
+                    image: '/Capture d’écran 2026-07-10 192417.png',
+                    tech: ['PYTHON', 'STREAMLIT']
                 },
                 {
                     title: 'Nukponto',
-                    desc: 'Plateforme intelligente de surveillance de la désinformation et d\'analyse géopolitique du Bénin.',
+                    desc: 'Plateforme intelligente dédiée à la surveillance de la désinformation et à l\'analyse géopolitique du Bénin.',
+                    achievements: [
+                        'Développement frontend avec React',
+                        'Intégration de modèles Python pour l\'analyse sémantique',
+                        'Mise en place d\'alertes en temps réel sur les fake news',
+                        'Création d\'une interface cartographique interactive'
+                    ],
                     live: 'https://nukponto.lovable.app/',
-                    tech: ['PYTHON']
+                    image: '/nukponto.png',
+                    tech: ['PYTHON', 'REACT']
                 },
                 {
                     title: 'Vorm AI',
-                    desc: 'Plateforme de gouvernance et de contrôle pour les agents IA en production avec gestion des permissions et logs.',
+                    desc: 'Plateforme de gouvernance complète pour les agents IA en production.',
+                    achievements: [
+                        'Conception UI/UX sur Figma',
+                        'Développement de l\'interface utilisateur en React',
+                        'Architecture backend sécurisée sous Django',
+                        'Gestion fine des permissions et des logs d\'audit'
+                    ],
                     live: 'https://www.vorm-ai.com/',
+                    image: '/vorm.png',
                     tech: ['DJANGO', 'REACT']
                 },
                 {
                     title: 'Portfolio V1',
-                    desc: 'Mon portfolio personnel en ligne présentant mes projets, compétences et expériences professionnelles.',
+                    desc: 'Application web personnelle présentant mon parcours, mes compétences et mes réalisations.',
+                    achievements: [
+                        'Design moderne et responsive avec Tailwind CSS',
+                        'Animations fluides au défilement (Scroll animations)',
+                        'Support bilingue (Français / Anglais)',
+                        'Optimisation SEO et intégration Open Graph'
+                    ],
                     live: 'https://bedel-portfolio.vercel.app/',
-                    tech: ['REACT']
+                    image: '/portfolio.png',
+                    tech: ['REACT', 'TAILWIND']
                 },
                 {
-                    title: 'Gestion Employés - Django',
-                    desc: 'Application web pour suivre les employés, gérer les listes et informations. Interface responsive avec Tailwind CSS.',
-                    github: 'https://github.com/bedelolo',
-                    tech: ['LARAVEL']
+                    title: 'Gestion Employés',
+                    desc: 'Plateforme de gestion des ressources humaines centralisant les informations des collaborateurs.',
+                    achievements: [
+                        'Conception de la base de données et des modèles Laravel',
+                        'Développement de l\'interface responsive avec Tailwind CSS',
+                        'Mise en place d\'un système de filtrage et de recherche',
+                        'Opérations CRUD complètes sur les profils employés'
+                    ],
+                    github: 'https://github.com/bedelolo/remplacer-par-le-bon-lien-repo-1',
+                    image: null,
+                    tech: ['LARAVEL', 'TAILWIND']
                 },
                 {
                     title: 'Gestion Congés & Permissions',
-                    desc: 'Application complète pour gérer les demandes de congés. Authentification, rôles (Admin/Employé) et export PDF.',
+                    desc: 'Système interne pour la soumission, la validation et le suivi des demandes de congés.',
+                    achievements: [
+                        'Développement backend robuste avec Django',
+                        'Mise en place d\'une gestion des rôles (Admin vs Employé)',
+                        'Workflows de validation des demandes de congés',
+                        'Génération et export de rapports au format PDF'
+                    ],
                     github: 'https://github.com/bedelolo/django-gestion-employe',
-                    tech: ['DJANGO']
+                    image: null,
+                    tech: ['DJANGO', 'PYTHON']
                 },
                 {
                     title: 'LLM Consensus System',
-                    desc: 'Système pour réduire les erreurs des LLMs via consensus. Orchestration performante en Rust et exécution Python.',
+                    desc: 'Système avancé d\'orchestration multi-LLM visant à réduire les hallucinations par mécanisme de consensus.',
+                    achievements: [
+                        'Orchestration à haute performance en Rust',
+                        'Intégration des appels API de modèles via Python',
+                        'Conteneurisation de l\'application avec Docker',
+                        'Amélioration mesurable de la précision des réponses'
+                    ],
                     github: 'https://github.com/remiboivin021/llm-consensus-system',
-                    tech: ['PYTHON', 'DOCKER', 'LARAVEL', 'DJANGO']
+                    image: null,
+                    tech: ['PYTHON', 'DOCKER', 'RUST', 'LARAVEL']
                 }
             ]
         },
@@ -279,6 +355,13 @@ export const translations = {
             frontend: 'FRONTEND (JS/TAILWIND)',
             apiDesign: 'API DESIGN (REST)',
             statisticalModeling: 'Statistical Modeling',
+            categories: {
+                languagesDb: 'Languages & Databases',
+                vizTools: 'Visualization & Tools',
+                backend: 'Backend',
+                frontend: 'Frontend',
+                architecture: 'Architecture'
+            },
             items: {
                 excel: 'Pivot tables, advanced functions, dynamic tables',
                 sql: 'Complex queries, joins, relational databases',
@@ -298,11 +381,13 @@ export const translations = {
             journey: 'Journey',
             items: [
                 {
-                    title: 'Co-founder',
-                    company: 'Vorm',
+                    title: 'Co-founder & Full-Stack Developer',
+                    company: 'Vorm AI',
                     period: 'May 2026 – Present',
                     description: [
-                        'Co-founding of Vorm, an AI governance platform.'
+                        'Designed the UI/UX on Figma and developed the frontend in React to ensure a seamless user experience.',
+                        'Architected and implemented the backend using Django, ensuring the platform\'s robustness and security.',
+                        'Set up a scalable infrastructure for the governance and permission management of AI agents.'
                     ]
                 },
                 {
@@ -310,8 +395,9 @@ export const translations = {
                     company: '10 000 Codeurs',
                     period: 'February 2025 – Present',
                     description: [
-                        'Holder of the 10 000 Codeurs digital passport.',
-                        'In charge of the data strategy for the 10 000 Codeurs conference in Cotonou.'
+                        'Defined and piloted the data strategy for the Cotonou conference, increasing organizational efficiency.',
+                        'Analyzed key metrics to guide strategic decisions during major events.',
+                        'Holder of the digital passport, validating both technical skills and soft skills.'
                     ]
                 },
                 {
@@ -319,21 +405,19 @@ export const translations = {
                     company: 'AYELTECH',
                     period: 'November 2025 – February 2026',
                     description: [
-                        'Creating interactive dashboards with Power BI for KPI tracking.',
-                        'Developing websites and web applications with Laravel and Django.',
-                        'Designing full-stack solutions combining web development and data analysis.',
-                        'Optimizing business processes through automation and data visualization.'
+                        'Designed automated interactive dashboards in Power BI, significantly reducing weekly reporting time.',
+                        'Developed custom full-stack web platforms (using Laravel and Django) to meet specific client needs.',
+                        'Conducted deep analysis of business databases to extract actionable insights for the management team.'
                     ]
                 },
                 {
-                    title: 'Data Analyst',
+                    title: 'Data Analytics Instructor',
                     company: 'GrowUp-AI',
                     period: 'September 2025 – November 2025',
                     description: [
-                        'Designing and conducting Python training sessions for data analysis.',
-                        'Introduction to Pandas, NumPy, Matplotlib and Seaborn libraries.',
-                        'Mentoring learners on practical mini-projects.',
-                        'Creating clear and accessible educational materials.'
+                        'Created a comprehensive training curriculum on Python (Pandas, NumPy, Matplotlib, Seaborn) for data analysis.',
+                        'Provided technical mentoring for a cohort of learners through practical, hands-on mini-projects.',
+                        'Simplified complex statistical concepts to accelerate participants\' skill development.'
                     ]
                 },
                 {
@@ -341,9 +425,9 @@ export const translations = {
                     company: 'Loterie Nationale du Bénin',
                     period: 'July 2025 – September 2025',
                     description: [
-                        'Analyzing operational data.',
-                        'Creating interactive Power BI reports.',
-                        'Optimizing Excel dashboards for decision-making.'
+                        'Analyzed large operational datasets to identify consumption trends and patterns.',
+                        'Built interactive Power BI reports and optimized existing Excel dashboards.',
+                        'Automated data collection processes, improving the reliability of daily KPIs.'
                     ]
                 }
             ]
@@ -378,6 +462,7 @@ export const translations = {
             viewAllRepos: 'VIEW ALL REPOS',
             github: 'GITHUB',
             live: 'LIVE',
+            achievementsTitle: "What I achieved:",
             tags: {
                 powerBiExcel: 'POWER BI / EXCEL',
                 python: 'PYTHON',
@@ -387,55 +472,122 @@ export const translations = {
             items: [
                 {
                     title: 'Sales Performance Analysis',
-                    desc: 'Excel dashboard to analyze performance by region, product and period. Tool used for real-time decision making.',
-                    github: 'https://github.com/bedelolo'
+                    desc: 'Performance analysis tool by region, product, and period.',
+                    achievements: [
+                        'Created a dynamic Excel dashboard',
+                        'Cross-analyzed sales by region and period',
+                        'Highlighted top-performing products',
+                        'Supported real-time decision making'
+                    ],
+                    github: 'https://github.com/bedeloloukpona/Tableau_de_bord',
+                    image: '/Tableau de bord.png',
+                    tech: ['POWER BI', 'EXCEL']
                 },
                 {
                     title: 'HR Dashboard – Visualization',
-                    desc: 'Tracking key indicators (salaries, age, satisfaction) and personnel analysis by gender, department and role with Power BI.',
-                    github: 'https://github.com/bedelolo'
+                    desc: 'Analysis of HR data to identify trends related to salaries, age, satisfaction, departments, and roles.',
+                    achievements: [
+                        'Data cleaning and preparation',
+                        'Creation of HR KPIs',
+                        'Analysis by department and role',
+                        'Interactive visualization',
+                        'Identification of key performance indicators'
+                    ],
+                    github: 'https://github.com/bedeloloukpona/Human_Analytics_dashboard',
+                    image: '/Dashboard.png',
+                    tech: ['POWER BI', 'EXCEL', 'DAX']
                 },
                 {
                     title: 'Public Services Optimization',
-                    desc: 'Data-Driven analysis of administrative services performance. Interactive dashboard for strategic management.',
+                    desc: 'Interactive Data-Driven dashboard for the evaluation and strategic management of administrative services.',
+                    achievements: [
+                        'Processed service performance data',
+                        'Developed an interactive application using Streamlit',
+                        'Visualized administrative bottlenecks',
+                        'Provided strategic management indicators'
+                    ],
                     github: 'https://github.com/bedelolo/Optimisation-services-publics',
-                    live: 'https://bedelolo-optimisation-services-publics-dashboardapp-qju07e.streamlit.app/'
+                    live: 'https://bedelolo-optimisation-services-publics-dashboardapp-qju07e.streamlit.app/',
+                    image: '/Capture d’écran 2026-07-10 192417.png',
+                    tech: ['PYTHON', 'STREAMLIT']
                 },
                 {
                     title: 'Nukponto',
-                    desc: 'Intelligent platform for monitoring disinformation and geopolitical analysis of Benin.',
+                    desc: 'Intelligent platform dedicated to monitoring disinformation and geopolitical analysis of Benin.',
+                    achievements: [
+                        'Developed frontend using React',
+                        'Integrated Python models for semantic analysis',
+                        'Implemented real-time fake news alerts',
+                        'Created an interactive mapping interface'
+                    ],
                     live: 'https://nukponto.lovable.app/',
-                    tech: ['PYTHON']
+                    image: '/nukponto.png',
+                    tech: ['PYTHON', 'REACT']
                 },
                 {
                     title: 'Vorm AI',
-                    desc: 'Governance and control platform for AI agents in production, featuring permission management and audit logs.',
+                    desc: 'Comprehensive governance platform for AI agents in production.',
+                    achievements: [
+                        'Designed UI/UX on Figma',
+                        'Developed the user interface in React',
+                        'Architected a secure backend using Django',
+                        'Implemented fine-grained permissions and audit logs'
+                    ],
                     live: 'https://www.vorm-ai.com/',
+                    image: '/vorm.png',
                     tech: ['DJANGO', 'REACT']
                 },
                 {
                     title: 'Portfolio V1',
-                    desc: 'My personal online portfolio showcasing my projects, skills, and professional experience.',
+                    desc: 'Personal web application showcasing my journey, skills, and achievements.',
+                    achievements: [
+                        'Modern and responsive design using Tailwind CSS',
+                        'Smooth scroll animations',
+                        'Bilingual support (French / English)',
+                        'SEO optimization and Open Graph integration'
+                    ],
                     live: 'https://bedel-portfolio.vercel.app/',
-                    tech: ['REACT']
+                    image: '/portfolio.png',
+                    tech: ['REACT', 'TAILWIND']
                 },
                 {
-                    title: 'Employee Management - Django',
-                    desc: 'Web application to track employees, manage lists and information. Responsive interface with Tailwind CSS.',
-                    github: 'https://github.com/bedelolo',
-                    tech: ['LARAVEL']
+                    title: 'Employee Management',
+                    desc: 'Human resources management platform centralizing employee information.',
+                    achievements: [
+                        'Designed the database and Laravel models',
+                        'Developed a responsive interface with Tailwind CSS',
+                        'Implemented advanced filtering and search systems',
+                        'Built full CRUD operations for employee profiles'
+                    ],
+                    github: 'https://github.com/bedelolo/remplacer-par-le-bon-lien-repo-1',
+                    image: null,
+                    tech: ['LARAVEL', 'TAILWIND']
                 },
                 {
                     title: 'Leave & Permissions Management',
-                    desc: 'Complete application to manage leave requests. Authentication, roles (Admin/Employee) and PDF export.',
-                    github: 'https://github.com/bedelolo',
-                    tech: ['DJANGO']
+                    desc: 'Internal system for submitting, approving, and tracking leave requests.',
+                    achievements: [
+                        'Developed a robust backend using Django',
+                        'Implemented role-based access control (Admin vs Employee)',
+                        'Built approval workflows for leave requests',
+                        'Generated and exported reports in PDF format'
+                    ],
+                    github: 'https://github.com/bedelolo/django-gestion-employe',
+                    image: null,
+                    tech: ['DJANGO', 'PYTHON']
                 },
                 {
                     title: 'LLM Consensus System',
-                    desc: 'System to reduce LLM errors through consensus. High-performance orchestration in Rust and Python execution.',
-                    github: 'https://github.com/bedelolo',
-                    tech: ['PYTHON', 'DOCKER', 'LARAVEL', 'DJANGO']
+                    desc: 'Advanced multi-LLM orchestration system aimed at reducing hallucinations through a consensus mechanism.',
+                    achievements: [
+                        'Built high-performance orchestration in Rust',
+                        'Integrated model API calls using Python',
+                        'Containerized the application with Docker',
+                        'Achieved measurable improvement in response accuracy'
+                    ],
+                    github: 'https://github.com/remiboivin021/llm-consensus-system',
+                    image: null,
+                    tech: ['PYTHON', 'DOCKER', 'RUST', 'LARAVEL']
                 }
             ]
         },
