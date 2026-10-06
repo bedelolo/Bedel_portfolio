@@ -28,9 +28,11 @@ const Experience = () => {
                       {exp.period}
                     </span>
                     <h3 className="font-h3 text-[24px] text-on-surface">{exp.title} @ {exp.company}</h3>
-                    <p className="text-body-md text-outline">
-                      {exp.description[0]} {exp.description[1]}
-                    </p>
+                    <ul className="space-y-1 text-body-md text-outline list-disc pl-4">
+                      {exp.description.map((point, i) => (
+                        <li key={i}>{point}</li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               ))}

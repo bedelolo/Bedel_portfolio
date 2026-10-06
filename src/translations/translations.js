@@ -198,7 +198,7 @@ export const translations = {
                     ],
                     github: 'https://github.com/bedelolo/Optimisation-services-publics',
                     live: 'https://bedelolo-optimisation-services-publics-dashboardapp-qju07e.streamlit.app/',
-                    image: '/Capture d’écran 2026-07-10 192417.png',
+                    image: '/capture_services_publics.png',
                     tech: ['PYTHON', 'STREAMLIT']
                 },
                 {
@@ -249,7 +249,7 @@ export const translations = {
                         'Mise en place d\'un système de filtrage et de recherche',
                         'Opérations CRUD complètes sur les profils employés'
                     ],
-                    github: 'https://github.com/bedelolo/remplacer-par-le-bon-lien-repo-1',
+                    github: null,
                     image: null,
                     tech: ['LARAVEL', 'TAILWIND']
                 },
@@ -508,7 +508,7 @@ export const translations = {
                     ],
                     github: 'https://github.com/bedelolo/Optimisation-services-publics',
                     live: 'https://bedelolo-optimisation-services-publics-dashboardapp-qju07e.streamlit.app/',
-                    image: '/Capture d’écran 2026-07-10 192417.png',
+                    image: '/capture_services_publics.png',
                     tech: ['PYTHON', 'STREAMLIT']
                 },
                 {
@@ -559,7 +559,7 @@ export const translations = {
                         'Implemented advanced filtering and search systems',
                         'Built full CRUD operations for employee profiles'
                     ],
-                    github: 'https://github.com/bedelolo/remplacer-par-le-bon-lien-repo-1',
+                    github: null,
                     image: null,
                     tech: ['LARAVEL', 'TAILWIND']
                 },
