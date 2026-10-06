@@ -18,7 +18,6 @@ const About = () => {
               alt="Bedel Professional Portrait" 
               className="relative rounded-2xl w-full aspect-square object-cover grayscale brightness-75 hover:grayscale-0 hover:brightness-100 transition-all duration-700 border border-white/10" 
               src="/photo_Bedel.jpeg"
-              loading="lazy"
             />
           </div>
           
